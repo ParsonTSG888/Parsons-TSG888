@@ -6,69 +6,73 @@
     <title>ParsonTSG888 - 企业资金管理与AI实战</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #e8f4f8; color: #1a1a1a; line-height: 1.6; }
         
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
-        .avatar { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #c47a3a, #e09860); display: flex; align-items: center; justify-content: center; font-size: 60px; margin-bottom: 24px; }
-        .name { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
-        .title { font-size: 18px; color: #888; margin-bottom: 24px; }
-        .bio { max-width: 600px; font-size: 16px; color: #aaa; line-height: 1.8; margin-bottom: 40px; }
-        .tagline { font-size: 14px; color: #666; margin-top: 8px; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(180deg, #e8f4f8 0%, #d4eaf0 100%); }
+        .avatar { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin-bottom: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .name { font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .brand { font-size: 18px; color: #4a90a4; margin-bottom: 24px; font-weight: 500; }
+        .title { font-size: 16px; color: #666; margin-bottom: 24px; }
+        .bio { max-width: 600px; font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 40px; }
+        .tagline { font-size: 14px; color: #888; margin-top: 16px; letter-spacing: 2px; }
         
         .section { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
-        .section-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 16px; }
-        .section-desc { color: #888; text-align: center; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .section-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 16px; color: #1a1a1a; }
+        .section-desc { color: #666; text-align: center; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
         
         .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-        .about-text { font-size: 15px; color: #aaa; line-height: 1.8; }
+        .about-text { font-size: 15px; color: #555; line-height: 1.8; }
         .about-text p { margin-bottom: 16px; }
-        .highlight { color: #c47a3a; font-weight: 600; }
+        .highlight { color: #4a90a4; font-weight: 600; }
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .stat { background: #1a1a1a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #333; }
-        .stat-num { font-size: 28px; font-weight: 700; color: #c47a3a; }
+        .stat { background: #fff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .stat-num { font-size: 28px; font-weight: 700; color: #4a90a4; }
         .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
         
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .service-card { background: #1a1a1a; border-radius: 16px; padding: 28px; border: 1px solid #333; transition: all 0.3s; position: relative; }
-        .service-card:hover { border-color: #c47a3a; transform: translateY(-4px); }
-        .service-badge { position: absolute; top: 16px; right: 16px; background: #c47a3a; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 20px; }
+        .service-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid #e8e8e8; transition: all 0.3s; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .service-badge { position: absolute; top: 16px; right: 16px; background: #4a90a4; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 20px; }
         .service-icon { font-size: 28px; margin-bottom: 16px; }
-        .service-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-        .service-price { font-size: 22px; font-weight: 700; color: #c47a3a; margin-bottom: 12px; }
+        .service-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a; }
+        .service-price { font-size: 22px; font-weight: 700; color: #4a90a4; margin-bottom: 12px; }
         .service-list { list-style: none; }
-        .service-list li { font-size: 14px; color: #888; padding: 6px 0; padding-left: 20px; position: relative; }
-        .service-list li::before { content: "✓"; position: absolute; left: 0; color: #c47a3a; }
+        .service-list li { font-size: 14px; color: #666; padding: 6px 0; padding-left: 20px; position: relative; }
+        .service-list li::before { content: "✓"; position: absolute; left: 0; color: #4a90a4; font-weight: 600; }
         
         .domains { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
-        .domain-tag { background: #1a1a1a; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; font-size: 13px; color: #aaa; }
+        .domain-tag { background: #fff; border: 1px solid #e0e0e0; padding: 8px 16px; border-radius: 20px; font-size: 13px; color: #555; }
         
         .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .project-card { background: #1a1a1a; border-radius: 16px; padding: 32px; border: 1px solid #333; text-decoration: none; color: #fff; transition: all 0.3s; }
-        .project-card:hover { border-color: #c47a3a; transform: translateY(-4px); }
+        .project-card { background: #fff; border-radius: 16px; padding: 32px; border: 1px solid #e8e8e8; text-decoration: none; color: #1a1a1a; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
         .project-icon { font-size: 36px; margin-bottom: 16px; }
         .project-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
-        .project-desc { color: #888; font-size: 14px; line-height: 1.6; }
-        .project-link { display: inline-block; margin-top: 16px; color: #c47a3a; font-weight: 500; }
+        .project-desc { color: #666; font-size: 14px; line-height: 1.6; }
+        .project-link { display: inline-block; margin-top: 16px; color: #4a90a4; font-weight: 500; }
         
         .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
-        .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 24px; background: #1a1a1a; border-radius: 12px; color: #fff; text-decoration: none; border: 1px solid #333; transition: all 0.3s; font-size: 14px; }
-        .social-link:hover { border-color: #c47a3a; background: #2a2a2a; }
+        .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 24px; background: #fff; border-radius: 12px; color: #1a1a1a; text-decoration: none; border: 1px solid #e0e0e0; transition: all 0.3s; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+        .social-link:hover { border-color: #4a90a4; box-shadow: 0 4px 12px rgba(74,144,164,0.15); }
         
-        .footer { text-align: center; padding: 60px 20px; color: #666; font-size: 14px; border-top: 1px solid #222; }
-        .footer .tagline { font-size: 16px; color: #888; margin-bottom: 8px; }
+        .footer { text-align: center; padding: 60px 20px; color: #888; font-size: 14px; }
+        .footer .tagline { font-size: 16px; color: #666; margin-bottom: 8px; }
         
         @media (max-width: 768px) {
             .name { font-size: 28px; }
             .about { grid-template-columns: 1fr; }
             .projects { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
 <body>
     <div class="hero">
-        <div class="avatar">P</div>
+        <div class="avatar">
+            <img src="头像图片.jpg" alt="Parson资金研习社">
+        </div>
         <div class="name">Parson</div>
+        <div class="brand">资金研习社</div>
         <div class="title">企业资金管理专家 · AI实战分享者</div>
         <div class="bio">
             曾任职于两家千亿营收、千亿市值级别上市公司<br>
@@ -133,7 +137,7 @@
             <span class="domain-tag">融资管理</span>
             <span class="domain-tag">应收应付</span>
         </div>
-        <div style="text-align: center; margin-top: 16px; color: #666; font-size: 14px;">
+        <div style="text-align: center; margin-top: 16px; color: #888; font-size: 14px;">
             行业：互联网 · 传统制造
         </div>
     </div>
