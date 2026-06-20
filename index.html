@@ -42,6 +42,12 @@
         .service-list li::before { content: "✓"; position: absolute; left: 0; color: #4a90a4; font-weight: 600; }
         .service-link { display: inline-block; margin-top: 16px; padding: 10px 24px; background: #4a90a4; color: #fff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.3s; }
         .service-link:hover { background: #3d7a8a; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-overlay.show { display: flex; }
+        .modal { background: #fff; border-radius: 16px; padding: 32px; text-align: center; max-width: 320px; }
+        .modal img { width: 200px; height: 200px; border-radius: 8px; margin-bottom: 16px; }
+        .modal p { color: #666; font-size: 14px; margin-bottom: 16px; }
+        .modal button { padding: 10px 24px; background: #4a90a4; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; }
         
         .domains { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 600px; margin: 20px auto 0; }
         .domain-tag { background: #fff; border: 1px solid #e0e0e0; padding: 8px 16px; border-radius: 20px; font-size: 13px; color: #555; text-align: center; }
@@ -170,7 +176,7 @@
                     <li>突出资金运营/外汇/授信等核心业务亮点</li>
                     <li>修改保障，改到适配岗位投递标准</li>
                 </ul>
-                <span class="service-link" style="background: #888; cursor: default;">微信咨询</span>
+                <span class="service-link" style="background: #888; cursor: pointer;" onclick="document.getElementById('qrcode-modal').classList.add('show')">微信咨询</span>
             </div>
             <div class="service-card">
                 <div class="service-icon">🎯</div>
@@ -195,7 +201,7 @@
                     <li>大厂资金线岗位内推机会优先匹配</li>
                     <li>从简历到面试再到入职，全链路上岸护航</li>
                 </ul>
-                <span class="service-link" style="background: #888; cursor: default;">微信咨询</span>
+                <span class="service-link" style="background: #888; cursor: pointer;" onclick="document.getElementById('qrcode-modal').classList.add('show')">微信咨询</span>
             </div>
         </div>
         <p style="text-align: center; color: #888; font-size: 14px; margin-top: 24px;">
@@ -316,6 +322,13 @@
     <div class="footer">
         <div class="tagline">思考 · 判断 · 记录 · 成长</div>
         <p>© 2026 ParsonTSG888 · Parson资金研习社</p>
+    </div>
+    <div id="qrcode-modal" class="modal-overlay" onclick="this.classList.remove('show')">
+        <div class="modal">
+            <img src="微信二维码.jpg" alt="微信二维码">
+            <p>长按识别二维码添加微信</p>
+            <button onclick="document.getElementById('qrcode-modal').classList.remove('show')">关闭</button>
+        </div>
     </div>
 </body>
 </html>
