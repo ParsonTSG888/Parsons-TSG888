@@ -6,117 +6,253 @@
     <title>ParsonTSG888 - 企业资金管理与AI实战</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #0a0a0a; color: #fff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; }
         
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
         .avatar { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #c47a3a, #e09860); display: flex; align-items: center; justify-content: center; font-size: 60px; margin-bottom: 24px; }
         .name { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
         .title { font-size: 18px; color: #888; margin-bottom: 24px; }
         .bio { max-width: 600px; font-size: 16px; color: #aaa; line-height: 1.8; margin-bottom: 40px; }
+        .tagline { font-size: 14px; color: #666; margin-top: 8px; }
         
-        .section { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
-        .section-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 40px; }
-        .section-subtitle { color: #888; text-align: center; margin-bottom: 40px; }
+        .section { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        .section-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 16px; }
+        .section-desc { color: #888; text-align: center; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #1a1a1a; border-radius: 16px; padding: 32px; border: 1px solid #333; transition: all 0.3s; }
-        .card:hover { border-color: #c47a3a; transform: translateY(-4px); }
-        .card-icon { font-size: 32px; margin-bottom: 16px; }
-        .card-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
-        .card-desc { color: #888; font-size: 14px; line-height: 1.6; }
-        .card-link { display: inline-block; margin-top: 16px; color: #c47a3a; text-decoration: none; font-weight: 500; }
-        .card-link:hover { text-decoration: underline; }
+        .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .about-text { font-size: 15px; color: #aaa; line-height: 1.8; }
+        .about-text p { margin-bottom: 16px; }
+        .highlight { color: #c47a3a; font-weight: 600; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .stat { background: #1a1a1a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #333; }
+        .stat-num { font-size: 28px; font-weight: 700; color: #c47a3a; }
+        .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
         
-        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
-        .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 24px; background: #1a1a1a; border-radius: 12px; color: #fff; text-decoration: none; border: 1px solid #333; transition: all 0.3s; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { background: #1a1a1a; border-radius: 16px; padding: 28px; border: 1px solid #333; transition: all 0.3s; position: relative; }
+        .service-card:hover { border-color: #c47a3a; transform: translateY(-4px); }
+        .service-badge { position: absolute; top: 16px; right: 16px; background: #c47a3a; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 20px; }
+        .service-icon { font-size: 28px; margin-bottom: 16px; }
+        .service-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .service-price { font-size: 22px; font-weight: 700; color: #c47a3a; margin-bottom: 12px; }
+        .service-list { list-style: none; }
+        .service-list li { font-size: 14px; color: #888; padding: 6px 0; padding-left: 20px; position: relative; }
+        .service-list li::before { content: "✓"; position: absolute; left: 0; color: #c47a3a; }
+        
+        .domains { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+        .domain-tag { background: #1a1a1a; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; font-size: 13px; color: #aaa; }
+        
+        .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .project-card { background: #1a1a1a; border-radius: 16px; padding: 32px; border: 1px solid #333; text-decoration: none; color: #fff; transition: all 0.3s; }
+        .project-card:hover { border-color: #c47a3a; transform: translateY(-4px); }
+        .project-icon { font-size: 36px; margin-bottom: 16px; }
+        .project-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .project-desc { color: #888; font-size: 14px; line-height: 1.6; }
+        .project-link { display: inline-block; margin-top: 16px; color: #c47a3a; font-weight: 500; }
+        
+        .social-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+        .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 24px; background: #1a1a1a; border-radius: 12px; color: #fff; text-decoration: none; border: 1px solid #333; transition: all 0.3s; font-size: 14px; }
         .social-link:hover { border-color: #c47a3a; background: #2a2a2a; }
-        .social-icon { font-size: 20px; }
         
-        .footer { text-align: center; padding: 40px 20px; color: #666; font-size: 14px; border-top: 1px solid #222; }
+        .footer { text-align: center; padding: 60px 20px; color: #666; font-size: 14px; border-top: 1px solid #222; }
+        .footer .tagline { font-size: 16px; color: #888; margin-bottom: 8px; }
         
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .name { font-size: 28px; }
-            .cards { grid-template-columns: 1fr; }
+            .about { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
 <body>
     <div class="hero">
         <div class="avatar">P</div>
-        <div class="name">ParsonTSG888</div>
+        <div class="name">Parson</div>
         <div class="title">企业资金管理专家 · AI实战分享者</div>
         <div class="bio">
-            十余年企业财资管理经验，聚焦司库/资金管理领域的知识体系构建与内容创作。<br>
-            致力于用AI技术赋能资金管理，帮助财务人提升效率、创造价值。
+            曾任职于两家千亿营收、千亿市值级别上市公司<br>
+            深耕企业资金管理领域，专注资金岗求职赋能
         </div>
         <div class="social-links">
             <a href="https://github.com/ParsonTSG888" target="_blank" class="social-link">
-                <span class="social-icon">GitHub</span>
-                ParsonTSG888
+                <span>GitHub</span> ParsonTSG888
             </a>
             <a href="#" class="social-link">
-                <span class="social-icon">微信</span>
-                ParsonTSG888
+                <span>微信</span> ParsonTSG888
             </a>
             <a href="#" class="social-link">
-                <span class="social-icon">小红书</span>
-                Parson资金研习社
+                <span>小红书</span> Parson资金研习社
             </a>
             <a href="#" class="social-link">
-                <span class="social-icon">公众号</span>
-                Parson资金研习社
+                <span>公众号</span> Parson资金研习社
             </a>
+        </div>
+        <div class="tagline">思考 · 判断 · 记录 · 成长</div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">关于我</div>
+        <div class="about">
+            <div class="about-text">
+                <p>大家好，我是Parson，很高兴认识你！</p>
+                <p>曾任职于两家<span class="highlight">千亿营收、千亿市值级别上市公司</span>，深耕企业资金管理领域。</p>
+                <p>开设这个账号/社群，主要是想和更多资金、财务、财资同行交流学习、共同提升。</p>
+                <p>大家有资金管理等相关问题，都可以随时和我沟通：</p>
+                <p>• 日常频次不高的文字/语音咨询，我会在下班或周末抽空认真回复（<span class="highlight">免费</span>）</p>
+                <p>• 若需要1V1点对点线上深度沟通，可以提前和我单约时间（<span class="highlight">收费</span>）</p>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">工作经验</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">千亿营收大厂</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">985</div>
+                    <div class="stat-label">本硕背景</div>
+                </div>
+            </div>
         </div>
     </div>
     
     <div class="section">
-        <div class="section-title">🚀 我的项目</div>
-        <div class="section-subtitle">持续更新中，欢迎关注</div>
-        <div class="cards">
-            <a href="https://ParsonTSG888.github.io/Corporate-Treasury-External-Recruitment-Positions/" target="_blank" class="card" style="text-decoration:none">
-                <div class="card-icon">💼</div>
-                <div class="card-title">企业资金管理社招岗位数据库</div>
-                <div class="card-desc">聚焦资金管理、国际支付、融资等方向的社招岗位聚合平台。400+岗位，200+企业，持续更新。</div>
-                <div class="card-link">访问数据库 →</div>
-            </a>
-            <a href="https://github.com/ParsonTSG888/Treasury-AI" target="_blank" class="card" style="text-decoration:none">
-                <div class="card-icon">🤖</div>
-                <div class="card-title">Treasury-AI：企业资金管理者的AI实战指南</div>
-                <div class="card-desc">从零开始，手把手教你用AI提升资金管理效率。33篇实战内容，覆盖15+场景。</div>
-                <div class="card-link">查看系列文章 →</div>
-            </a>
+        <div class="section-title">专业领域</div>
+        <div class="domains">
+            <span class="domain-tag">资金运营</span>
+            <span class="domain-tag">资金结算</span>
+            <span class="domain-tag">海外资金</span>
+            <span class="domain-tag">现金管理</span>
+            <span class="domain-tag">外汇管理</span>
+            <span class="domain-tag">国际支付</span>
+            <span class="domain-tag">授信管理</span>
+            <span class="domain-tag">信用风险</span>
+            <span class="domain-tag">融资管理</span>
+            <span class="domain-tag">应收应付</span>
+        </div>
+        <div style="text-align: center; margin-top: 16px; color: #666; font-size: 14px;">
+            行业：互联网 · 传统制造
         </div>
     </div>
     
     <div class="section">
-        <div class="section-title">🎯 我能提供什么</div>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <div class="card-title">知识分享</div>
-                <div class="card-desc">司库管理、资金管理、跨境金融等领域的专业内容，通过公众号、小红书持续输出。</div>
+        <div class="section-title">专注资金岗求职赋能</div>
+        <div class="section-desc">从简历到入职，一站式上岸护航</div>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">资金岗求职入门包</div>
+                <div class="service-price">¥99</div>
+                <ul class="service-list">
+                    <li>700+企业资金岗位全品类资料包</li>
+                    <li>金融/财务赛道专属岗位发展路径指导</li>
+                    <li>日常求职疑问不限次文字答疑</li>
+                    <li>新手零门槛入局，快速摸清赛道全貌</li>
+                </ul>
             </div>
-            <div class="card">
-                <div class="card-icon">🤖</div>
-                <div class="card-title">AI实战指导</div>
-                <div class="card-desc">帮助财务人用AI工具提效，从工具选型到落地实操的完整指导。</div>
+            <div class="service-card">
+                <div class="service-badge">推荐</div>
+                <div class="service-icon">📄</div>
+                <div class="service-title">大厂资金岗简历精修</div>
+                <div class="service-price">¥109</div>
+                <ul class="service-list">
+                    <li>精准匹配单个目标岗位JD定制优化</li>
+                    <li>专业履历逻辑重构+大厂风格版式排版</li>
+                    <li>突出资金运营/外汇/授信等核心业务亮点</li>
+                    <li>修改保障，改到适配岗位投递标准</li>
+                </ul>
             </div>
-            <div class="card">
-                <div class="card-icon">💼</div>
-                <div class="card-title">职业发展咨询</div>
-                <div class="card-desc">资金管理领域的职业规划、面试辅导、简历优化等服务。</div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <div class="service-title">1小时资金岗职业问诊</div>
+                <div class="service-price">¥169/小时</div>
+                <ul class="service-list">
+                    <li>大厂资金岗真实面试场景实战演练</li>
+                    <li>跳槽/转型/赛道选择专属答疑解惑</li>
+                    <li>针对性职业路径规划与避坑指导</li>
+                    <li>10年大厂实战经验，直击求职核心痛点</li>
+                </ul>
             </div>
-            <div class="card">
-                <div class="card-icon">🏢</div>
-                <div class="card-title">企业咨询</div>
-                <div class="card-desc">帮助企业搭建资金管理体系、推进AI落地、优化资金效率。</div>
+            <div class="service-card">
+                <div class="service-badge">热门</div>
+                <div class="service-icon">🚀</div>
+                <div class="service-title">大厂资金岗冲刺陪跑营</div>
+                <div class="service-price">¥699</div>
+                <ul class="service-list">
+                    <li>3次1v1面试模拟+逐题复盘带教</li>
+                    <li>3个目标大厂JD专属简历深度修订</li>
+                    <li>大厂资金线岗位内推机会优先匹配</li>
+                    <li>从简历到面试再到入职，全链路上岸护航</li>
+                </ul>
             </div>
+        </div>
+        <p style="text-align: center; color: #888; font-size: 14px; margin-top: 24px;">
+            购买任意套餐，即可加入VIP资金求职专属社群，解锁免费大厂内推通道+行业人脉资源
+        </p>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">面试辅导优势</div>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <div class="service-title">长期面试官经验</div>
+                <div class="service-list">
+                    <li>实习生/校招/社招三线面试官</li>
+                    <li>精通资金管理面试与高分逻辑</li>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <div class="service-title">跨行转型实战</div>
+                <div class="service-list">
+                    <li>传统行业→互联网大厂资金条线转型</li>
+                    <li>提供可复制的方法与落地路径</li>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <div class="service-title">高点挖掘与提炼</div>
+                <div class="service-list">
+                    <li>善于从普通经历中发现闪光点</li>
+                    <li>提炼简历亮点，打造差异化竞争力</li>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <div class="service-title">定制辅导方案</div>
+                <div class="service-list">
+                    <li>基于你的背景与目标岗位量身定制</li>
+                    <li>拒绝模板化，专属辅导方案</li>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">我的项目</div>
+        <div class="projects">
+            <a href="https://ParsonTSG888.github.io/Corporate-Treasury-External-Recruitment-Positions/" target="_blank" class="project-card">
+                <div class="project-icon">💼</div>
+                <div class="project-title">企业资金管理社招岗位数据库</div>
+                <div class="project-desc">聚焦资金管理、国际支付、融资等方向的社招岗位聚合平台。400+岗位，200+企业，持续更新。</div>
+                <div class="project-link">访问数据库 →</div>
+            </a>
+            <a href="https://github.com/ParsonTSG888/Treasury-AI" target="_blank" class="project-card">
+                <div class="project-icon">🤖</div>
+                <div class="project-title">Treasury-AI：AI实战指南</div>
+                <div class="project-desc">从零开始，手把手教你用AI提升资金管理效率。33篇实战内容，覆盖15+场景。</div>
+                <div class="project-link">查看系列文章 →</div>
+            </a>
         </div>
     </div>
     
     <div class="footer">
+        <div class="tagline">思考 · 判断 · 记录 · 成长</div>
         <p>© 2026 ParsonTSG888 · Parson资金研习社</p>
-        <p style="margin-top: 8px;">思考 · 判断 · 记录 · 成长</p>
     </div>
 </body>
 </html>
