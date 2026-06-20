@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParsonTSG888 - 企业资金管理与AI实战</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; background: #0a0a0a; color: #fff; }
+        
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
+        .avatar { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #c47a3a, #e09860); display: flex; align-items: center; justify-content: center; font-size: 60px; margin-bottom: 24px; }
+        .name { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+        .title { font-size: 18px; color: #888; margin-bottom: 24px; }
+        .bio { max-width: 600px; font-size: 16px; color: #aaa; line-height: 1.8; margin-bottom: 40px; }
+        
+        .section { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
+        .section-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+        .section-subtitle { color: #888; text-align: center; margin-bottom: 40px; }
+        
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #1a1a1a; border-radius: 16px; padding: 32px; border: 1px solid #333; transition: all 0.3s; }
+        .card:hover { border-color: #c47a3a; transform: translateY(-4px); }
+        .card-icon { font-size: 32px; margin-bottom: 16px; }
+        .card-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .card-desc { color: #888; font-size: 14px; line-height: 1.6; }
+        .card-link { display: inline-block; margin-top: 16px; color: #c47a3a; text-decoration: none; font-weight: 500; }
+        .card-link:hover { text-decoration: underline; }
+        
+        .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+        .social-link { display: flex; align-items: center; gap: 8px; padding: 12px 24px; background: #1a1a1a; border-radius: 12px; color: #fff; text-decoration: none; border: 1px solid #333; transition: all 0.3s; }
+        .social-link:hover { border-color: #c47a3a; background: #2a2a2a; }
+        .social-icon { font-size: 20px; }
+        
+        .footer { text-align: center; padding: 40px 20px; color: #666; font-size: 14px; border-top: 1px solid #222; }
+        
+        @media (max-width: 600px) {
+            .name { font-size: 28px; }
+            .cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="avatar">P</div>
+        <div class="name">ParsonTSG888</div>
+        <div class="title">企业资金管理专家 · AI实战分享者</div>
+        <div class="bio">
+            十余年企业财资管理经验，聚焦司库/资金管理领域的知识体系构建与内容创作。<br>
+            致力于用AI技术赋能资金管理，帮助财务人提升效率、创造价值。
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/ParsonTSG888" target="_blank" class="social-link">
+                <span class="social-icon">GitHub</span>
+                ParsonTSG888
+            </a>
+            <a href="#" class="social-link">
+                <span class="social-icon">微信</span>
+                ParsonTSG888
+            </a>
+            <a href="#" class="social-link">
+                <span class="social-icon">小红书</span>
+                Parson资金研习社
+            </a>
+            <a href="#" class="social-link">
+                <span class="social-icon">公众号</span>
+                Parson资金研习社
+            </a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🚀 我的项目</div>
+        <div class="section-subtitle">持续更新中，欢迎关注</div>
+        <div class="cards">
+            <a href="https://ParsonTSG888.github.io/Corporate-Treasury-External-Recruitment-Positions/" target="_blank" class="card" style="text-decoration:none">
+                <div class="card-icon">💼</div>
+                <div class="card-title">企业资金管理社招岗位数据库</div>
+                <div class="card-desc">聚焦资金管理、国际支付、融资等方向的社招岗位聚合平台。400+岗位，200+企业，持续更新。</div>
+                <div class="card-link">访问数据库 →</div>
+            </a>
+            <a href="https://github.com/ParsonTSG888/Treasury-AI" target="_blank" class="card" style="text-decoration:none">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">Treasury-AI：企业资金管理者的AI实战指南</div>
+                <div class="card-desc">从零开始，手把手教你用AI提升资金管理效率。33篇实战内容，覆盖15+场景。</div>
+                <div class="card-link">查看系列文章 →</div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">🎯 我能提供什么</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <div class="card-title">知识分享</div>
+                <div class="card-desc">司库管理、资金管理、跨境金融等领域的专业内容，通过公众号、小红书持续输出。</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <div class="card-title">AI实战指导</div>
+                <div class="card-desc">帮助财务人用AI工具提效，从工具选型到落地实操的完整指导。</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💼</div>
+                <div class="card-title">职业发展咨询</div>
+                <div class="card-desc">资金管理领域的职业规划、面试辅导、简历优化等服务。</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <div class="card-title">企业咨询</div>
+                <div class="card-desc">帮助企业搭建资金管理体系、推进AI落地、优化资金效率。</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2026 ParsonTSG888 · Parson资金研习社</p>
+        <p style="margin-top: 8px;">思考 · 判断 · 记录 · 成长</p>
+    </div>
+</body>
+</html>
