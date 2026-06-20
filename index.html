@@ -90,13 +90,13 @@
             <a href="https://github.com/ParsonTSG888" target="_blank" class="social-link">
                 <span>GitHub</span> ParsonTSG888
             </a>
-            <a href="#" class="social-link">
+            <a href="#" class="social-link" onclick="document.getElementById('wechat-modal').classList.add('show'); return false;">
                 <span>微信</span> ParsonTSG888
             </a>
-            <a href="#" class="social-link">
+            <a href="https://xhslink.com/m/6MTuL9ISKiC" target="_blank" class="social-link">
                 <span>小红书</span> Parson资金研习社
             </a>
-            <a href="#" class="social-link">
+            <a href="#" class="social-link" onclick="document.getElementById('gzh-modal').classList.add('show'); return false;">
                 <span>公众号</span> Parson资金研习社
             </a>
         </div>
@@ -328,6 +328,14 @@
             <img src="微信二维码.jpg" alt="微信二维码">
             <p>长按识别二维码添加微信</p>
             <button onclick="document.getElementById('qrcode-modal').classList.remove('show')">关闭</button>
+        </div>
+    </div>
+    
+    <div id="gzh-modal" class="modal-overlay" onclick="this.classList.remove('show')">
+        <div class="modal">
+            <img src="微信公众号二维码.jpg" alt="微信公众号二维码">
+            <p>长按识别二维码关注公众号</p>
+            <button onclick="document.getElementById('gzh-modal').classList.remove('show')">关闭</button>
         </div>
     </div>
 </body>
